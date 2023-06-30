@@ -18,7 +18,7 @@ import com.example.MongoDBConn.model.Team;
 public class MongoDbConnApplication implements CommandLineRunner{
 
 	@Autowired
-	TeamRepository teamRepo;
+	TeamService teamRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MongoDbConnApplication.class, args);
@@ -26,16 +26,16 @@ public class MongoDbConnApplication implements CommandLineRunner{
 
 	public void run(String... args) throws Exception {
 		
-		getTeamByName("NZ team");
+		getTeamById("649937367041f1a2f10fa796");
 		
 	}
 	
-	public void getTeamByName(String name) {
-        System.out.println("Getting Team by name: " + name);
+	public void getTeamById(String id) {
+        System.out.println("Getting Team by id: " + id);
         
-        Team team = teamRepo.findTeamByName(name);
+        Team team = teamRepo.findTeamById(id);
 
-        System.out.println("La base de datos funciona OK y el team es: " + team.getName());
+        System.out.println("La base de datos funciona OK y el nombre es: " + team.getName());
     }
 
 

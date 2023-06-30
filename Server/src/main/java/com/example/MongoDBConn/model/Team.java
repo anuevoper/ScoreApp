@@ -1,17 +1,27 @@
 package com.example.MongoDBConn.model;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@AllArgsConstructor
+@Getter
+@Setter
 @Document("Team")
 public class Team {
 	@Id
 	private String id;
-	
 	private String name;
 	private String participants;
 	private String activities;
-	
-	public Team (String id, String name, String participants, String activities) { 
+
+	/****************************************
+	 * Refactored with project lombok for simplicity
+	 ****************************************************/
+
+/*	public Team (String id, String name, String participants, String activities) {
 		super();
 		this.id = id;
 		this.setName(name);
@@ -41,7 +51,7 @@ public class Team {
 	}
 	public void setActivities(String activities) {
 		this.activities = activities;
-	}
+	}*/
 	
 	
 }
