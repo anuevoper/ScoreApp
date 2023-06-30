@@ -38,5 +38,4 @@ public class MongoDbConnApplication implements CommandLineRunner{
         System.out.println("La base de datos funciona OK y el nombre es: " + team.getName());
     }
 
-
 }
