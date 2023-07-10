@@ -22,17 +22,6 @@ public class MongoDbConnApplication implements CommandLineRunner {
     }
 
     public void run(String... args) {
-
-        getTeamById("649937367041f1a2f10fa796");
-
-    }
-
-    public void getTeamById(String id) {
-        System.out.println("Getting Team by id: " + id);
-
-        Team team = teamRepo.findTeam(id);
-
-        System.out.println("La base de datos funciona OK y el nombre es: " + team.getName());
     }
 
 }
