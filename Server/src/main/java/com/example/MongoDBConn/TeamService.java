@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -13,6 +14,10 @@ public class TeamService {
     TeamRepository repository;
     public TeamService(TeamRepository repository) {
         this.repository = repository;
+    }
+
+    public List<Team> getAllTeams(){
+        return repository.findAll();
     }
 
     public Team findTeamById(String id){
@@ -25,5 +30,14 @@ public class TeamService {
 
     public void saveTeam(Team team){
         repository.save(team);
+    }
+
+    public Team editTeam(Team team, String id){
+        //TODO: figure out how to implement this with a no-sql DDBB
+        return findTeamById(id);
+    }
+
+    public void deleteById(String id){
+        repository.deleteById(id);
     }
 }
