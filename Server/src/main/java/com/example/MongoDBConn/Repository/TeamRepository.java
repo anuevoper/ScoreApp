@@ -10,8 +10,8 @@ import com.example.MongoDBConn.model.Team;
 import java.util.Optional;
 
 @Repository
-public interface TeamRepository extends MongoRepository<Team, String>{
-	
+public interface TeamRepository extends MongoRepository<Team, String> {
+
     @Query("{id:'?0'}")
     Optional<Team> findTeamById(String id);
 }

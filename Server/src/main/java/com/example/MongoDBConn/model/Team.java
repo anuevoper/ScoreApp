@@ -1,4 +1,5 @@
 package com.example.MongoDBConn.model;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,12 +14,12 @@ import java.util.List;
 @Setter
 @Document("Team")
 public class Team {
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private String name;
+    private String name;
 
-	private List<String> participants;
+    private List<String> participants;
 
-	private List<Activity> activities;
+    private List<Activity> activities;
 }

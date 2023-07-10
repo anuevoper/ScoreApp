@@ -10,29 +10,27 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import com.example.MongoDBConn.model.Team;
 
 
-
-
 @SpringBootApplication
 @EnableMongoRepositories
-public class MongoDbConnApplication implements CommandLineRunner{
+public class MongoDbConnApplication implements CommandLineRunner {
 
-	@Autowired
-	TeamService teamRepo;
-	
-	public static void main(String[] args) {
-		SpringApplication.run(MongoDbConnApplication.class, args);
-	}
+    @Autowired
+    TeamService teamRepo;
 
-	public void run(String... args) throws Exception {
-		
-		getTeamById("649937367041f1a2f10fa796");
-		
-	}
-	
-	public void getTeamById(String id) {
+    public static void main(String[] args) {
+        SpringApplication.run(MongoDbConnApplication.class, args);
+    }
+
+    public void run(String... args) throws Exception {
+
+        getTeamById("649937367041f1a2f10fa796");
+
+    }
+
+    public void getTeamById(String id) {
         System.out.println("Getting Team by id: " + id);
-        
-        Team team = teamRepo.findTeamById(id);
+
+        Team team = teamRepo.findTeam(id);
 
         System.out.println("La base de datos funciona OK y el nombre es: " + team.getName());
     }
