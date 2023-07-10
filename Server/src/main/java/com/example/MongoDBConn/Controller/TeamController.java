@@ -5,7 +5,6 @@ import com.example.MongoDBConn.model.Activity;
 import com.example.MongoDBConn.model.Team;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.AbstractCollection;
 import java.util.List;
 
 @RestController

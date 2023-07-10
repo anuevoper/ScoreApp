@@ -21,7 +21,7 @@ public class MongoDbConnApplication implements CommandLineRunner {
         SpringApplication.run(MongoDbConnApplication.class, args);
     }
 
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         getTeamById("649937367041f1a2f10fa796");
 
