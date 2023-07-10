@@ -1,4 +1,4 @@
-package com.example.MongoDBConn;
+package com.example.MongoDBConn.Service;
 
 import com.example.MongoDBConn.Repository.TeamRepository;
 import com.example.MongoDBConn.model.Activity;
@@ -15,6 +15,8 @@ public class TeamService {
     public TeamService(TeamRepository repository) {
         this.repository = repository;
     }
+
+    /**General methods*/
 
     public List<Team> getAllTeams() {
         return repository.findAll();
@@ -42,6 +44,12 @@ public class TeamService {
         return repository.save(team);
     }
 
+    public void deleteById(String id) {
+        repository.deleteById(id);
+    }
+
+    /**Team activities methods*/
+
     public List<Activity> showTeamActivities(String teamId){
         return findTeam(teamId).getActivities();
     }
@@ -53,6 +61,8 @@ public class TeamService {
         return repository.save(team);
     }
 
+    /**Team participants methods */
+
     public List<String> showTeamParticipants(String teamId){
         return findTeam(teamId).getParticipants();
     }
@@ -62,9 +72,5 @@ public class TeamService {
         team.getParticipants().add(participantName);
 
         return repository.save(team);
-    }
-
-    public void deleteById(String id) {
-        repository.deleteById(id);
     }
 }
