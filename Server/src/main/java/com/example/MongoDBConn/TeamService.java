@@ -2,10 +2,7 @@ package com.example.MongoDBConn;
 
 import com.example.MongoDBConn.Repository.TeamRepository;
 import com.example.MongoDBConn.model.Team;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
